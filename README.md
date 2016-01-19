@@ -1,6 +1,6 @@
 # Microcosm Debugger
 
-A debugging tool for Microcosm. Work in progress!
+A debugging tool for [Microcosm](https://github.com/vigetlabs/microcosm). Work in progress!
 
 ## Usage
 
