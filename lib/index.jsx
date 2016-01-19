@@ -3,7 +3,8 @@ import DOM     from 'react-dom'
 import React   from 'react'
 import Style   from './style.css'
 
-export default function Debugger (app, { depth=Infinity }={}, next) {
+export default function Debugger (app, options, next) {
+  var depth = options.depth == undefined ? 50 : options.depth
   var container = document.createElement('div')
   var style  = document.createElement('style')
 
