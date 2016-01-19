@@ -4,13 +4,9 @@ A debugging tool for [Microcosm](https://github.com/vigetlabs/microcosm). Work i
 
 ## Usage
 
-Until we publish to NPM, try:
-
-
-1. Add `"microcosm-debugger":
-   "git@github.com:vigetlabs/microcosm-debugger.git"` to your
-   package.json
-2. Add the plugin to an instance of Microcosm like so:
+```shell
+npm install microcosm-debugger
+```
 
 ```javascript
 var Debugger = require('microcosm-debugger')
