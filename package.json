@@ -1,0 +1,27 @@
+{
+  "name": "microcosm-debugger",
+  "version": "0.0.0",
+  "description": "A debugging tool for Microcosm",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vigetlabs/microcosm-debugger.git"
+  },
+  "scripts": {
+    "test": "mocha -R dot"
+  },
+  "keywords": [
+    "react",
+    "microcosm"
+  ],
+  "author": "Nate Hunzaker, Viget Labs",
+  "license": "MIT",
+  "dependencies": {
+    "paths-js": "0.4.0"
+  },
+  "devDependencies": {
+    "microcosm": "9.17.0",
+    "react": "0.14.6",
+    "react-dom": "0.14.6"
+  }
+}
