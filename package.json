@@ -2,7 +2,7 @@
   "name": "microcosm-debugger",
   "version": "0.0.0",
   "description": "A debugging tool for Microcosm",
-  "main": "lib/index.js",
+  "main": "dist/microcosm-debugger.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:vigetlabs/microcosm-debugger.git"
