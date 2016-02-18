@@ -20,9 +20,7 @@ const Node = React.createClass({
 
     return (
       <g className="debugger-node" transform={ this.getTransform() } onClick={ this.onClick }>
-        <circle r="10" stroke="white" strokeOpacity="0.05" fill="#112" />
-
-        <circle className="debugger-node-marker" r={ radius } fill={ fill } />
+        <circle className="debugger-node-marker" r={ radius } fill={ fill } stroke="#001" strokeOpacity="0.9" />
 
         <text className="debugger-node-label" dy="-14" fontSize="11" textAnchor="middle" fill="white">
           { this.humanizeAction(item.value.type) }

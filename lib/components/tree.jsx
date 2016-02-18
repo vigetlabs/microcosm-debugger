@@ -7,8 +7,8 @@ const TreeVisual = React.createClass({
   getDefaultProps() {
     return {
       padding : 25,
-      height  : 150,
-      width   : 800
+      height  : 100,
+      width   : 275
     }
   },
 
@@ -54,7 +54,7 @@ const TreeVisual = React.createClass({
     return (
       <svg width={ width } height={ height }>
         <g transform={`translate(${padding},${padding})` }>
-          <g fill="none" stroke="rgba(255, 255, 255, 0.1)">
+          <g fill="none" stroke="rgba(125, 225, 255, 0.2)">
             { tree.curves.map(this.getCurve) }
           </g>
           { tree.nodes.map(this.getNode) }

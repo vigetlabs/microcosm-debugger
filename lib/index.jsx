@@ -1,23 +1,15 @@
+import './style.css'
+
 import Console from './components/console'
 import DOM     from 'react-dom'
 import React   from 'react'
-import Style   from './style.css'
 
 export default function Debugger (app, options, next) {
-  var depth = options.depth == undefined ? 50 : options.depth
   var container = document.createElement('div')
-  var style  = document.createElement('style')
 
   container.className = "debugger-wrapper"
 
-  style.textContent = Style
-
-  document.head.appendChild(style)
   document.body.appendChild(container)
-
-  app.shouldHistoryKeep = function() {
-    return app.history.size() <= depth
-  }
 
   function render () {
     DOM.render(<Console app={ app } />, container)
