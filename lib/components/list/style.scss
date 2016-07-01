@@ -1,0 +1,111 @@
+@import "../../style/colors";
+
+@keyframes loading {
+  0% {
+    transform: scaleX(0);
+  }
+  60% {
+    left: 60%;
+    transform: scaleX(0.50);
+  }
+  100% {
+    left: 100%;
+    transform: scaleX(0);
+  }
+}
+
+.list {
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 12px;
+  overflow: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  box-shadow: inset 0 -4px 0 $hairline;
+  position: relative;
+  transition: 0.3s all;
+
+  &.complete {
+    box-shadow: inset 0 -4px 0 $success;
+  }
+
+  &.error {
+    box-shadow: inset 0 -4px 0 $error;
+  }
+
+  &.loading {
+    box-shadow: inset 0 -4px 0 $loading;
+
+    &:after {
+      animation: loading 0.7s infinite linear;
+      background: $loading-dark;
+      bottom: 0;
+      content: "";
+      height: 4px;
+      left: 0;
+      position: absolute;
+      transform-origin: 0 0;
+      width: 100%;
+    }
+  }
+
+  &.inactive {
+    box-shadow: inset 0 -4px 0 $hairline;
+  }
+
+  &.cancelled {
+    box-shadow: inset 0 -4px 0 $cancelled;
+  }
+}
+
+.parameters {
+  background: #eee;
+  border-top: 1px solid $hairline;
+  box-shadow: inset 0 1px 3px $hairline;
+  padding: 12px 4px 16px;
+  overflow: auto;
+  max-height: 400px;
+}
+
+.menu {
+  align-items: center;
+  display: flex;
+  padding: 0 0 0 16px;
+  margin: 0;
+}
+
+.title {
+  display: block;
+  flex-grow: 1;
+}
+
+.button {
+  background: transparent;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 0;
+  margin: 4px;
+  padding: 12px;
+  transition: 0.3s all;
+  width: 40px;
+  height: 40px;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $hairline;
+    outline: none;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 3px $hairline;
+    transition: 0.1s all;
+  }
+}

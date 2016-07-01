@@ -1,0 +1,120 @@
+@import "../../style/colors";
+
+@keyframes throb {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.tree {
+  flex-shrink: 0;
+  flex-grow: 0;
+  overflow: auto;
+
+  svg {
+    background: $night;
+    border: 0;
+    display: block;
+    margin: 0;
+  }
+}
+
+.label {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: 0.3s all;
+  stroke-width: 0;
+  letter-spacing: 0.2px;
+}
+
+.node {
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    .label {
+      opacity: 1;
+    }
+  }
+}
+
+.ring,
+.marker {
+  fill: $night;
+  r: 4;
+  stroke: transparent;
+  transform: translateZ(0);
+}
+
+.marker {
+  fill: $cyan;
+  transition: 0.3s all;
+}
+
+.node:hover,
+.node:focus,
+.node.active {
+  .ring {
+    stroke: $cyan;
+    stroke-width: 1.5;
+    r: 9;
+    transition: 0.3s all;
+  }
+}
+
+.node.active {
+  .ring {
+    stroke: $magenta;
+  }
+}
+
+.node.loading {
+  .marker {
+    fill: $loading;
+  }
+
+  .ring {
+    animation: throb 1.5s infinite;
+    stroke: $loading;
+  }
+}
+
+.node.error {
+  .marker {
+    fill: $error;
+  }
+
+  .ring {
+    stroke: $error;
+  }
+}
+
+.node.disabled {
+  .marker {
+    fill: $disabled;
+  }
+}
+
+.node.cancelled {
+  .marker {
+    fill: $cancelled;
+  }
+}

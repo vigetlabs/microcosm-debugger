@@ -1,0 +1,24 @@
+html {
+  padding-right: 350px;
+}
+
+.container *,
+.container *:before,
+.container *:after {
+  box-sizing: inherit;
+}
+
+.container {
+  background: white;
+  box-shadow: inset 1px 0 2px rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  box-sizing: border-box;
+  color: #112;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  height: 100%;
+  position: fixed;
+  width: 350px;
+  z-index: 1000000;
+}
