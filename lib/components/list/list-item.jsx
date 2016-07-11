@@ -1,9 +1,6 @@
-import 'react-json-inspector/json-inspector.css'
-
-import React     from 'react'
-import Inspector from 'react-json-inspector'
-import cx        from 'classnames'
-import style     from './style'
+import React from 'react'
+import cx    from 'classnames'
+import style from './style'
 
 function humanize (text) {
   return text.replace(/\_\d+$/, '')
@@ -42,7 +39,7 @@ export default React.createClass({
 
     return (
       <div className={ style.parameters }>
-        <Inspector data={ action.payload } search={ null } />
+        <pre>{ JSON.stringify(action.payload, null, 2) }</pre>
       </div>
     )
   },
@@ -60,6 +57,7 @@ export default React.createClass({
           <button className={ style.button } type="button" onClick={ this.mute }>
             { action.is('disabled') ? "◇" : "◆" }
           </button>
+
           <button className={ style.button } type="button" onClick={ this.toggle }>
             { this.state.open ? "▴" : "▾" }
           </button>

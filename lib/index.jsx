@@ -9,9 +9,8 @@ export default function (app, options) {
 
   document.body.appendChild(container)
 
-  function checkout(transaction) {
-    app.history.checkout(transaction)
-    app.rollforward()
+  function checkout (action) {
+    app.checkout(action)
   }
 
   function render () {

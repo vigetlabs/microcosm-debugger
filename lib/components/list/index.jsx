@@ -2,16 +2,22 @@ import React from 'react'
 import Item  from './list-item'
 import style from './style'
 
-export default function List ({ history }) {
-  let timeline = history.toArray().reverse()
-
-  let items = timeline.map(function (action, i) {
-    return <Item key={ i } action={ action } />
-  })
+function Empty() {
 
   return (
-    <ul className={ style.list }>
-      { items }
-    </ul>
+    <div className={ style.empty }>
+      <h2 className={ style.heading }>Nothing has happened</h2>
+      <p>
+        Push actions to follow changes to your application over time.
+      </p>
+    </div>
   )
+}
+
+export default function List ({ history }) {
+  let items = history.reduce(function (list, action, i) {
+    return list.concat(<Item key={ i } action={ action } />)
+  }, []).reverse()
+
+  return items.length ? (<ul className={ style.list }>{ items }</ul>) : <Empty />
 }

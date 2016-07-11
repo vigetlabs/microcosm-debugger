@@ -1,9 +1,11 @@
 var HappyPack = require('happypack')
 var WebPack   = require('webpack')
 
+var isDev = process.env.NODE_ENV === 'production'
+
 module.exports = {
 
-  devtool: 'inline-sourcemap',
+  devtool: isDev ? 'source-map' : 'inline-sourcemap',
 
   entry: {
     'microcosm-debugger': './lib/index.jsx'
@@ -20,8 +22,8 @@ module.exports = {
   },
 
   externals: {
-    'react': 'react',
-    'react-dom': 'react-dom'
+    'react'     : 'react',
+    'react-dom' : 'react-dom'
   },
 
   plugins: [
@@ -44,7 +46,6 @@ module.exports = {
         loaders: [
           'style?sourceMap',
           'css?modules&importLoaders=1&localIdentName=[local]-[hash:base64:5]',
-          'resolve-url',
           'sass?sourceMap'
         ],
         happy: { id: 'app' }

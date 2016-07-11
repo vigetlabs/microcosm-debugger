@@ -60,34 +60,32 @@ const TreeVisual = React.createClass({
                   y={ point[1] || 0 }
                   item={ item }
                   active={ active }
-                  onHover={ this.setFocus }
                   onClick={ this.props.onNodeClick } />)
   },
 
   render() {
-    const { history } = this.props
+    const { history, height } = this.props
 
     return (
       <div className={ style.tree }>
-        { history.size() ? this.renderTree() : null }
+        <svg ref="chart" width={ this.state.width } height={ height }>
+          { history.size() ? this.renderTree() : null }
+        </svg>
       </div>
     )
   },
 
   renderTree() {
-    let { history, padX, padY, height } = this.props
-
-    let tree = this.getTree(history)
+    const { history, padX, padY } = this.props
+    const tree = this.getTree(history)
 
     return (
-      <svg ref="chart" width={ this.state.width } height={ height }>
-        <g transform={`translate(${padX},${padY})` }>
-          <g fill="none" stroke="rgba(125, 225, 255, 0.2)">
-            { tree.curves.map(this.getCurve) }
-          </g>
-          { tree.nodes.map(this.getNode) }
+      <g transform={`translate(${padX},${padY})`}>
+        <g fill="none" stroke="rgba(125, 225, 255, 0.2)">
+          { tree.curves.map(this.getCurve) }
         </g>
-      </svg>
+        { tree.nodes.map(this.getNode) }
+      </g>
     )
   }
 
