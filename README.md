@@ -19,4 +19,4 @@ Debugger(app)
 
 ## What it looks like
 
-![what the microcosm debugger looks like](./docs/debugger.gif)
+![what the microcosm debugger looks like](./docs/chat-debugger.gif)
