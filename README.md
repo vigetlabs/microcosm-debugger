@@ -9,17 +9,14 @@ npm install microcosm-debugger
 ```
 
 ```javascript
-var Debugger = require('microcosm-debugger')
+import Debugger from 'microcosm-debugger'
 
-var app = new Microcosm()
+// Enable history forever
+const app = new Microcosm({ maxHistory: Infinity })
 
-app.addPlugin(Debugger)
-
-app.start(function() {
-  console.log("Commence debugging")
-})
+Debugger(app)
 ```
 
 ## What it looks like
 
-![how-it-works](./docs/debugger.gif)
+![what the microcosm debugger looks like](./docs/debugger.gif)
