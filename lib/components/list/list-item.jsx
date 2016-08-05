@@ -51,7 +51,7 @@ export default React.createClass({
       <li className={ this.getClassNames() }>
         <div className={ style.menu }>
           <span className={ style.title }>
-            { humanize(action.behavior.name) }
+            { humanize(action.behavior.done) }
           </span>
 
           <button className={ style.button } type="button" onClick={ this.mute }>
