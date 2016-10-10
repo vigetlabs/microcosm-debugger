@@ -24,7 +24,7 @@ const TreeVisual = React.createClass({
   },
 
   getWidth() {
-    return Math.max(this.props.history.size() * 20,
+    return Math.max(this.props.history.size * 20,
                     this.props.width,
                     this.state ? this.state.width : 0)
   },
