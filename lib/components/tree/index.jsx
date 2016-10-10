@@ -69,7 +69,7 @@ const TreeVisual = React.createClass({
     return (
       <div className={ style.tree }>
         <svg ref="chart" width={ this.state.width } height={ height }>
-          { history.size() ? this.renderTree() : null }
+          { history.size > 0 ? this.renderTree() : null }
         </svg>
       </div>
     )
