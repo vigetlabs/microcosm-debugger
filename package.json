@@ -1,6 +1,6 @@
 {
   "name": "microcosm-debugger",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A debugging tool for Microcosm",
   "main": "dist/microcosm-debugger.js",
   "repository": {
