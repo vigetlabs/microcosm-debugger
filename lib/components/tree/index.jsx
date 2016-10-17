@@ -52,7 +52,7 @@ const TreeVisual = React.createClass({
   },
 
   getNode({ point, item }, i) {
-    const active = this.props.history.focus === item
+    const active = this.props.history.head === item
 
     return (<Node key={ i }
                   ref={ active ? this.scrollIntoView : null }
