@@ -2,7 +2,7 @@ import DOM      from 'react-dom'
 import React    from 'react'
 import Debugger from './components/debugger'
 
-export default function (app, options) {
+export default function (repo, options) {
   var container = document.createElement('div')
 
   container.className = "debugger-wrapper"
@@ -10,14 +10,14 @@ export default function (app, options) {
   document.body.appendChild(container)
 
   function checkout (action) {
-    app.checkout(action)
+    repo.checkout(action)
   }
 
   function render () {
-    DOM.render(<Debugger history={ app.history } onCheckout={ checkout } />, container)
+    DOM.render(<Debugger history={repo.history} onCheckout={checkout} />, container)
   }
 
   render()
 
-  app.on('change', render)
+  repo.on('change', render)
 }

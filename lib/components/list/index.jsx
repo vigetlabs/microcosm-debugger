@@ -15,7 +15,7 @@ function Empty() {
 }
 
 export default function List ({ history }) {
-  let items = history.reduce(function (list, action, i) {
+  let items = history.toArray().reduce(function (list, action, i) {
     return list.concat(<Item key={ i } action={ action } />)
   }, []).reverse()
 
