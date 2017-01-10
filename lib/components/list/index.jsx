@@ -2,6 +2,18 @@ import React from 'react'
 import Item  from './list-item'
 import style from './style'
 
+function toArray (history) {
+  let items = []
+  let node = history.root
+
+  while (node) {
+    items.push(node)
+    node = node.next
+  }
+
+  return items
+}
+
 function Empty() {
 
   return (
@@ -15,7 +27,7 @@ function Empty() {
 }
 
 export default function List ({ history }) {
-  let items = history.toArray().reduce(function (list, action, i) {
+  let items = toArray(history).reduce(function (list, action, i) {
     return list.concat(<Item key={ i } action={ action } />)
   }, []).reverse()
 

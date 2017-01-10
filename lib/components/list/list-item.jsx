@@ -18,8 +18,8 @@ export default React.createClass({
     let { action } = this.props
 
     return cx(style.item, {
-      [style.inactive]  : action.is('disabled'),
-      [style.error]     : action.is('failed'),
+      [style.inactive]  : action.disabled,
+      [style.error]     : action.is('error'),
       [style.loading]   : action.is('open'),
       [style.complete]  : action.is('done'),
       [style.cancelled] : action.is('cancelled')

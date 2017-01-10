@@ -9,8 +9,8 @@ const Node = React.createClass({
 
     const className = cx(style.node, {
       [style.active]    : active,
-      [style.disabled]  : item.is('disabled'),
-      [style.error]     : item.is('failed'),
+      [style.disabled]  : item.disabled,
+      [style.error]     : item.is('error'),
       [style.loading]   : item.is('loading'),
       [style.cancelled] : item.is('cancelled')
     })
