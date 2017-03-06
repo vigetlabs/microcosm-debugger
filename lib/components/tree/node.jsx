@@ -22,7 +22,7 @@ const Node = React.createClass({
         <circle className={ style.marker } r="3" />
 
         <text className={ style.label } dy="-18" fontSize="11" textAnchor="middle" fill="white">
-          { item.behavior.name }
+          { item.command.name }
         </text>
       </g>
     )
