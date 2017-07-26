@@ -1,6 +1,12 @@
+** Heads up!** This project is no longer maintained. We've moved all Microcosm debugger related work to a browser extension:
+
+https://github.com/vigetlabs/microcosm-debugger
+
+---
+
 # Microcosm Debugger
 
-A debugging tool for [Microcosm](https://github.com/vigetlabs/microcosm). Work in progress!
+A debugging tool for [Microcosm](https://github.com/vigetlabs/microcosm). 
 
 ## Usage
 
