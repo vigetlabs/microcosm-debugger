@@ -1,4 +1,4 @@
-** Heads up!** This project is no longer maintained. We've moved all Microcosm debugger related work to a browser extension:
+**Heads up!** This project is no longer maintained. We've moved all Microcosm debugger related work to a browser extension:
 
 https://github.com/vigetlabs/microcosm-debugger
 
